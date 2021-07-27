@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> HEART DISEASE ANALYSIS</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <h1>HEART DISEASE ANALYSIS</h1>
+    <h2>Enter the Required Details</h2>
+    <form action="{{url_for('predict')}}" method="POST">
+            <div class="form-group">
+                <label>Age:</label>
+            <input type="number" class="form-control" name="age" placeholder="age" required="required" />
+                </div>
+                <div class="form-group">
+                <label>Trestbps:</label>
+            <input type="text" class="form-control" name="trestbps" placeholder="trestbps" required="required" />
+                </div>
+                <div class="form-group">
+                <label>Serum Cholestoral in mg/dl</label>
+            <input type="text" class="form-control" name="chol" placeholder="chol" required="required"/>
+                </div>
+                <div class="form-group">
+                 <label>Maximum heart rate achieved:</label>
+            <input type="text" class="form-control" name="thalach" placeholder="thalach" required="required"/>
+                </div>
+                <div class="form-group">
+                 <label>ST depression induced by exercise relative to rest:</label>
+            <input type="text" class="form-control" name="oldpeak" placeholder="oldpeak" required="required"/>
+                </div>
+                <div class="form-group">
+                 <label>Number of major vessels colored by Flourosopy:</label>
+            <input type="text" class="form-control" name="ca" placeholder="ca" required="required"/>
+                    <p2>(0-3)</p2>
+                    </div>
+         <div class="form-group">
+                <label>Sex</label>
+            <input type="text" class="form-control" name="sex" placeholder="sex" required="required" />
+            <p2>(1 = Male; 0 = Female)</p2>
+             </div>
+             <div class="form-group">
+                 <label>Chest pain:</label>
+            <input type="text" class="form-control" name="cp"  required="required"/>
+                 <p2>(0 = typical; 1 = asymptotic; 2 = nonanginal; 3 = nontypical)</p2>
+                 </div>
+                 <div class="form-group">
+                 <label>Fasting blood sugar > 120 mg/dl:</label>
+            <input type="text" class="form-control" name="fbs" placeholder="fbs" required="required"/>
+                     <p2> (1 = true; 0 = false)</p2>
+                     </div>
+                     <div class="form-group">
+                 <label> Resting Electrocardiographic results:</label>
+            <input type="text" class="form-control" name="restecg" placeholder="restECG" required="required"/>
+                         </div>
+                         <div class="form-group">
+                 <label> Exercise induced angina:</label>
+            <input type="text" class="form-control" name="exang" placeholder="exang" required="required"/>
+                             <p2> (1 = yes; 0 = no)</p2>
+                             </div>
+                             <div class="form-group">
+                 <label>Slope of the peak exercise ST segment:</label>
+            <input type="text" class="form-control" name="slope" placeholder="slope" required="required"/>
+                                 </div>
+                                 <div class="form-group">
+                    <label>Thal:</label>
+            <input type="text" class="form-control" name="thal" placeholder="thal" required="required"/>
+                                     <p2>(3 = normal; 6 = fixed defect; 7 = reversable defect)</p2>
+                                     </div>
+
+        <button type="submit" class="btn btn-primary">Predict</button>
+
+    </form>
+    <br>
+    <br>
+    <h3>{{ predicted_text }}<h3/>
+</div>
+</body>
+</html>
